@@ -1,15 +1,10 @@
-# Exercício 1: Qubrando e invertendo uma string:
+a = int(input("DIgite o primeiro valor: "))
+b = int(input("DIgite o segundo valor: "))
+c = int(input("DIgite o terceiro valor: "))
 
-# texto = "Python é interessante pro mercado"
-# palavras = texto.split() # Vai quebar a o texto em "palavras de string"
-# textoInvertido = "---".join(palavras[::-1]) # Slicing/Fatiamento
-# print(textoInvertido)
+numeros = []
+numeros.extend([a,b,c])
 
-
-# Exercício 2: Verificando se a palavra é um palíndromo:
-
-# word = input("Digite a palavra pra verificar se é um palíndromo: ")
-# wordformat = word.lower().replace(" ","")
-# wordInvert = (wordformat[::-1])
-# result = wordInvert == wordformat
-# print(result)
+print(numeros)
+print(numeros[:1])
+print(a + b + c)
