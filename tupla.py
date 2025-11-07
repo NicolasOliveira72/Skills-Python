@@ -27,9 +27,9 @@ cid1 = input("Digite a primeira cidade:")
 cid2 = input("Digite a segunda cidade: ")
 cid3 = input("Digite a terceira cidade: ")
 
-tuplaCidades = []
-tuplaCidades.extend([cid1,cid2,cid3])
+tuplaCidades = (cid1,cid2,cid3)
 print(tuplaCidades)
 print(tuplaCidades[-1])
 print(len(tuplaCidades))
+print(type(tuplaCidades))
 
