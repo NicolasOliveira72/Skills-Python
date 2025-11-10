@@ -1,36 +1,33 @@
 # Estrutura de repetição: FOR:
 
-# Impriindo números acima de 5: 
+# Impriindo números menores que 6: 
 
-"""
-numeros = [1,2,3,4,5,6,7,8,9,5,7,3,6,2,8]
+numeros = [1,2,3,4,5,6,72,4,6,1,8,4,8,23,6,7,2,9,3]
 
-for x in numeros:
-    if x >= 5:
-        print(x)
-"""
-
+'''for x in numeros:
+    if x <= 5:
+        print(x) 
+'''
 # Interrompendo a sequencia de código ao cegar no 5:
 
-"""
-numeros = [1,2,33,55,3,4,5,6,7,8,9,5,7,3,6,2,8]
-
-for x in numeros:
+'''for x in numeros:
     if x == 5:
         break
-    print(x)"""
+    print(x)'''
 
 # Analisando filmes:
 
 name = input("Digite o nome do filme: ")
-quantAva = int(input("Digite a quatidade de avaliações desejada: "))
+quant = int(input("Digite a quantidade de análises desejada: "))
 
 x = 0
-for y in range(quantAva):
-        av = float(input("Digite a avaliação: "))
-        x += av
+for x in range(quant):
+    av = float(input("Digite a nota do filme: "))
+    x += av
 
-if quantAva > 0:
-    print(f"A media do filme é {x/quantAva}")
+if quant > 0:
+    print(f"A média do filme é: {x/quant}")
 else:
-    print("Não há avaliação")
+    print("Não há avliações! ")
+
+
