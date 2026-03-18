@@ -29,6 +29,12 @@ while True:
     else:
         print("Produto nao cadastrado. ")
 
-print(f"O total é: {total}")
-print(f"O carrinho é: {carrinho}")
-print(f"O estoque atual ficou: {estoque}")
+def recibo(a,b):
+    print(f"Os itens comprados foram: {a}")
+    print(f"O total de compras é: {b}")
+
+def estoque_final(a):
+    print(f"O estoque final é: {a}")
+    
+recibo(carrinho,total)
+estoque_final(estoque)
