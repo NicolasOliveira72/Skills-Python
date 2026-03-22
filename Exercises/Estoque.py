@@ -1,7 +1,7 @@
 # Estoque de compras para a importação:
 
 estoque = {
-    "Abacate" : {"Preco": 6.85, "Quantidade": 18},
+    "Abacate" : {"Preco": 6.85, "Quantidade": 3},
     "Abóbora" : {"Preco": 6.85, "Quantidade": 18},
     "Tomate" : {"Preco": 6.85, "Quantidade": 18},
     "Banana" : {"Preco": 6.85, "Quantidade": 18},
@@ -29,12 +29,13 @@ while True:
     else:
         print("Produto nao cadastrado. ")
 
-def recibo(a,b):
-    print(f"Os itens comprados foram: {a}")
-    print(f"O total de compras é: {b}")
+def exportar_recibo(carrinho, total):
+    with open ("recibo.txt", "w", encoding="utf-8") as arquivo:
+        arquivo.write("====== Recibo de compras ======\n")
+        for item in carrinho:
+            arquivo.write(f"Produto: {item}\n")
+        arquivo.write("===============================\n")
+        arquivo.write(f"Total final = {total:.2f}\n")
+    print("Recibo exportado")
 
-def estoque_final(a):
-    print(f"O estoque final é: {a}")
-    
-recibo(carrinho,total)
-estoque_final(estoque)
+exportar_recibo(carrinho, total)
