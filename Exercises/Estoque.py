@@ -1,7 +1,7 @@
 # Estoque de compras para a importação:
 
 estoque = {
-    "Abacate" : {"Preco": 6.85, "Quantidade": 3},
+    "Ata" : {"Preco": 6.85, "Quantidade": 3},
     "Abóbora" : {"Preco": 6.85, "Quantidade": 18},
     "Tomate" : {"Preco": 6.85, "Quantidade": 18},
     "Banana" : {"Preco": 6.85, "Quantidade": 18},
@@ -19,18 +19,22 @@ while True:
         break
 
     if pedido in estoque:
-
         if estoque[pedido]["Quantidade"] > 0:
-            carrinho.append(pedido)
-            estoque[pedido]["Quantidade"] -= 1
-            total += estoque[pedido]["Preco"]
+            quantidade = int(input(f"Digite a quantidade de produtos (apenas {estoque[pedido]["Quantidade"]} em estoque): "))
+            if estoque[pedido]["Quantidade"] >= quantidade:
+                carrinho.extend([pedido] * quantidade)
+                estoque[pedido]["Quantidade"] -= quantidade
+                total += estoque[pedido]["Preco"] * quantidade
+            else:
+                print("Quantidade insuficiente em estoque!")
         else:
             print("Produto esgotado.")
     else:
         print("Produto nao cadastrado. ")
 
+
 def exportar_recibo(carrinho, total):
-    with open ("recibo.txt", "w", encoding="utf-8") as arquivo:
+    with open ("recibo.csv", "w", encoding="utf-8") as arquivo:
         arquivo.write("====== Recibo de compras ======\n")
         for item in carrinho:
             arquivo.write(f"Produto: {item}\n")
