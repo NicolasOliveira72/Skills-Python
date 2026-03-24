@@ -1,12 +1,6 @@
-# Estoque de compras para a importação:
+# Compras no hortfrut pelo cliente:
 
-estoque = {
-    "Ata" : {"Preco": 6.85, "Quantidade": 3},
-    "Abóbora" : {"Preco": 6.85, "Quantidade": 18},
-    "Tomate" : {"Preco": 6.85, "Quantidade": 18},
-    "Banana" : {"Preco": 6.85, "Quantidade": 18},
-    "Melancia" : {"Preco": 6.85, "Quantidade": 18}
-}
+from data import estoque
 
 carrinho = []
 total = 0
