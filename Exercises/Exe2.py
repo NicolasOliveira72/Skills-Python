@@ -1,48 +1,59 @@
-# Estoque de frutas:
+# Sistema de supermercado:
 
 estoque = {
-    "Maçã": {"preço": 4.50, "quantidade": 50},
-    "Banana": {"preço": 3.20, "quantidade": 120},
-    "Laranja": {"preço": 2.99, "quantidade": 85},
-    "Morango": {"preço": 7.50, "quantidade": 30},
-    "Uva": {"preço": 8.90, "quantidade": 45},
-    "Abacaxi": {"preço": 6.00, "quantidade": 25},
-    "Manga": {"preço": 5.40, "quantidade": 60},
-    "Melancia": {"preço": 12.00, "quantidade": 15},
-    "Mamão": {"preço": 4.80, "quantidade": 40},
-    "Limão": {"preço": 1.99, "quantidade": 150}
+    "Arroz": {"quantidade": 45, "preco": 7.89},
+    "Feijão": {"quantidade": 30, "preco": 8.50},
+    "Óleo": {"quantidade": 60, "preco": 6.20},
+    "Açúcar": {"quantidade": 40, "preco": 4.15},
+    "Café": {"quantidade": 25, "preco": 16.90},
+    "Leite": {"quantidade": 120, "preco": 5.49},
+    "Macarrão": {"quantidade": 50, "preco": 3.75},
+    "Molho": {"quantidade": 80, "preco": 2.29},
+    "Sal": {"quantidade": 15, "preco": 2.10},
+    "Farinha": {"quantidade": 35, "preco": 5.30},
+    "Manteiga": {"quantidade": 22, "preco": 11.40},
+    "Queijo": {"quantidade": 18, "preco": 9.98},
+    "Frango": {"quantidade": 14, "preco": 18.90},
+    "Ovos": {"quantidade": 28, "preco": 10.50},
+    "Detergente": {"quantidade": 75, "preco": 2.45},
+    "Sabão": {"quantidade": 20, "preco": 14.99},
+    "Creme": {"quantidade": 45, "preco": 4.20},
+    "Papel": {"quantidade": 32, "preco": 17.80},
+    "Biscoito": {"quantidade": 90, "preco": 3.15},
+    "Suco": {"quantidade": 16, "preco": 12.60}
 }
 
-total = 0
 carrinho = []
+total = 0
+
+def line():
+    lines = "="
+    print(lines*30)
+
+def recibo():
+    line()
+    print(f"Produtos comprados: {carrinho}")
+    print(f"Total: {total}")
+    line()
+    print(f"Estoque atual: {estoque}")
+    line()
+      
+line()
 
 while True:
-    requisicao = input('Digite a fruta desejada ou digite "Sair": ').strip().capitalize()
-    if requisicao == "Sair":
-        break
-    if requisicao in estoque:
-        if estoque[requisicao]["quantidade"] > 0:
-            print(f"Produto {requisicao} adicionado!")
-            total += estoque[requisicao]["preço"]
-            estoque[requisicao]["quantidade"] -= 1
-            carrinho.append(requisicao)
+    requisicao = input('Digite o produto ou "Sair": ').strip().capitalize()
+    if requisicao != "Sair":
+        if requisicao in estoque:
+            if estoque[requisicao]["quantidade"] > 0:
+                carrinho.append(requisicao)
+                total += estoque[requisicao]["preco"]
+                print("Produto adicionado.")
+                estoque[requisicao]["quantidade"] -= 1
+            else:
+                print("Produto ineisponível.")
         else:
-            print("Produto indisponível no momento")
+            print("Produto não cadastrado.")
     else:
-        print("Produto não cadastrado")
-    
-def Recibo():
-    line = "-"
-    print(f"Carrinho: ", carrinho)
-    print(line*30)
-    print(f"Total: ", total)
-
-def lines():
-    line = "="
-    print(line*30)
-
-
-
-lines()
-Recibo()
-lines()
+        print("Compra encerrada, volte sempre, grato.")
+        recibo()
+        break 
