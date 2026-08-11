@@ -1,14 +1,10 @@
 # Working with class:
 
 class Car:
-    def __init__(self, marca, modelo):
-        self.marca = marca
-        self.modelo = modelo
 
     def ligar(self):
-        print(f"O carro do modelo {self.modelo} da marca {self.marca} está ligado!")
+        print("Carro ligado!")
 
-novo_objeto = Car("Gurgel", "Elétrico")
+carro1 = Car()
 
-print("Marca: " + novo_objeto.marca)
-novo_objeto.ligar()
+carro1.ligar()
