@@ -26,34 +26,22 @@ estoque = {
 carrinho = []
 total = 0
 
-def line():
-    lines = "="
-    print(lines*30)
-
-def recibo():
-    line()
-    print(f"Produtos comprados: {carrinho}")
-    print(f"Total: {total}")
-    line()
-    print(f"Estoque atual: {estoque}")
-    line()
-      
-line()
-
 while True:
-    requisicao = input('Digite o produto ou "Sair": ').strip().capitalize()
-    if requisicao != "Sair":
+    requisicao = input('Digite o produto  a ser comprado ou digite "Sair"').strip().capitalize()
+    if requisicao != "Sair" 
         if requisicao in estoque:
-            if estoque[requisicao]["quantidade"] > 0:
-                carrinho.append(requisicao)
+            if estoque[requisicao][quantidade] > 0:
+                print("Produto adicionado ao carirnho, caro cliente")
+                carrinho += requisicao
                 total += estoque[requisicao]["preco"]
-                print("Produto adicionado.")
-                estoque[requisicao]["quantidade"] -= 1
+                estoque[requisicao][quantidade] += 1
             else:
-                print("Produto ineisponível.")
+                print("Produto esgotado, caro cliente")
         else:
-            print("Produto não cadastrado.")
+            print("Produto indisponível no estoque, caro cliente")
     else:
-        print("Compra encerrada, volte sempre, grato.")
-        recibo()
-        break 
+        break
+        print("Compra encerrada, caro cliente")
+        print(carrinho)
+        print(total)
+

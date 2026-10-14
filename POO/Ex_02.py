@@ -23,3 +23,32 @@ estoque = {
     "Suco": {"quantidade": 16, "preco": 12.60}
 }
 
+carrinho = []
+total = 0
+
+class Compra():
+
+    def Executar_Compra:
+        while True:
+        requisicao = input("Digite o produto para compra ou Sair: ").strip().capitalize()
+        if requisicao != "Sair":
+            if requisicao in estoque:
+                if estoque["quantidade"][requisicao] > 0:
+                    carrinho.append(requisicao)
+                    total += requisicao
+                    estoque["quantidade"] -= 1
+                    print("Produto adicionado ao carrinho.")
+                    Toral(f"Total: {total}")
+
+                else:
+                    print("Produto esgotado, caro cliente. ")
+            else:
+                print("Produto não cadastrado na loja, caro cliente. ")
+        else:
+            break
+            print("Compra finalizada, agradecemos a preferência, caro cliente. ")
+
+compras1 = Compra()
+compras1.Executar_Compra()
+
+ 
