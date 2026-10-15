@@ -9,7 +9,7 @@ estoque = {
     "Leite": {"quantidade": 120, "preco": 5.49},
     "Macarrão": {"quantidade": 50, "preco": 3.75},
     "Molho": {"quantidade": 80, "preco": 2.29},
-    "Sal": {"quantidade": 15, "preco": 2.10},
+    "Sal": {"quantidade": 3, "preco": 2.10},
     "Farinha": {"quantidade": 35, "preco": 5.30},
     "Manteiga": {"quantidade": 22, "preco": 11.40},
     "Queijo": {"quantidade": 18, "preco": 9.98},
@@ -30,6 +30,8 @@ def lines():
     line = "="
     print(line*30)
 
+lines()
+
 while True:
     requisicao = input('Digite o produto  a ser comprado ou digite "Sair": ').strip().capitalize()
     if requisicao != "Sair": 
@@ -45,7 +47,10 @@ while True:
             print("Produto indisponível no estoque, caro cliente")
     else:
         lines()
+
         print("Compra encerrada, caro cliente! Agradecemos sua preferência")
+        
+        print(" ========== Recibo ========== ")
         print(carrinho)
         print(total)
         lines()
