@@ -47,9 +47,8 @@ while True:
             print("Produto indisponível no estoque, caro cliente")
     else:
         lines()
-
         print("Compra encerrada, caro cliente! Agradecemos sua preferência")
-        
+        lines()
         print(" ========== Recibo ========== ")
         print(carrinho)
         print(total)
