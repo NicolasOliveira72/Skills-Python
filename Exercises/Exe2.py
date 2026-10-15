@@ -27,21 +27,21 @@ carrinho = []
 total = 0
 
 while True:
-    requisicao = input('Digite o produto  a ser comprado ou digite "Sair"').strip().capitalize()
-    if requisicao != "Sair" 
+    requisicao = input('Digite o produto  a ser comprado ou digite "Sair": ').strip().capitalize()
+    if requisicao != "Sair": 
         if requisicao in estoque:
-            if estoque[requisicao][quantidade] > 0:
+            if estoque[requisicao]["quantidade"] > 0:
                 print("Produto adicionado ao carirnho, caro cliente")
-                carrinho += requisicao
+                carrinho.append(requisicao)
                 total += estoque[requisicao]["preco"]
-                estoque[requisicao][quantidade] += 1
+                estoque[requisicao]["quantidade"] -= 1
             else:
                 print("Produto esgotado, caro cliente")
         else:
             print("Produto indisponível no estoque, caro cliente")
     else:
-        break
         print("Compra encerrada, caro cliente")
         print(carrinho)
         print(total)
+        break
 
