@@ -25,6 +25,10 @@ estoque = {
 
 carrinho = []
 total = 0
+ 
+def lines():
+    line = "="
+    print(line*30)
 
 while True:
     requisicao = input('Digite o produto  a ser comprado ou digite "Sair": ').strip().capitalize()
@@ -40,8 +44,10 @@ while True:
         else:
             print("Produto indisponível no estoque, caro cliente")
     else:
+        lines()
         print("Compra encerrada, caro cliente")
         print(carrinho)
         print(total)
+        lines()
         break
 
