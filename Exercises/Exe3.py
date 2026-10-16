@@ -30,15 +30,15 @@ def lines():
 
 
 while True:
-    request = input('Digite o produto desejado ou digite "Sair"').strip().capitalize()
+    request = input('Digite o produto desejado ou digite "Sair": ').strip().capitalize()
     if request != "Sair":
         if request in estoque:
             if estoque[request]["quantidade"] > 0:
                 lines()
                 print("Produto adicionado. ")
-                carinho.append(request)
+                carrinho.append(request)
                 total += estoque[request]["preco"]
-                estoque[requisicao]["Quantidade"] -= 1
+                estoque[request]["quantidade"] -= 1
                 lines()
             else:
                 print("Produto esgotado, caro cliente. ")
@@ -46,10 +46,10 @@ while True:
             print("Produto não cadastrado, caro cliente.")
     else:
         lines()
-        print(Obrigado pela compra, caro cliente.)
+        print("Obrigado pela compra, caro cliente.")
+        lines()
+        print(" =============== Recibo =============== ")
         print(f"Carrinho: {carrinho}")
         print(f"Total {total}")
         lines()
-    
-
-        
+        break
